@@ -17,6 +17,7 @@ score1El.textContent = 0;
 diceEl.classList.add('hidden');
 
 let currentScore = 0;
+let activePlayer = 0;
 //Rolling dice funtionality
 btnRoll.addEventListener('click', function () {
   // 1.-Generating random dice roll
@@ -30,8 +31,11 @@ btnRoll.addEventListener('click', function () {
   if (dice !== 1) {
     //Add dice to current score
     currentScore += dice;
-    current0El.textContent = currentScore; //CHANGE LATER
+    document.getElementById(`current--${activePlayer}`).textContent =
+      currentScore;
+    //CHANGE LATER
   } else {
     //switch for next player
+    activePlayer = activePlayer === 0 ? 1 : 0;
   }
 });
