@@ -92,6 +92,7 @@ btnHold.addEventListener('click', function () {
         .classList.remove('player--active');
     } else {
       //swith to the next player
+      switchPlayer();
     }
   }
 });
